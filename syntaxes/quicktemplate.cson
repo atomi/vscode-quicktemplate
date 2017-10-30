@@ -1,0 +1,23 @@
+'fileTypes': [
+  'qtpl'
+]
+
+'name': 'HTML (quicktemplate)'
+
+'patterns': [
+  {
+    'begin': '{%'
+    'end': '%}'
+    'name': 'punctuation.quicktemplate'
+    'patterns': [
+      {
+        'include': 'source.go'
+      }
+    ]
+  }
+  {
+    'include': 'text.html.basic'
+  }
+]
+
+'scopeName': 'text.html.quicktemplate'
