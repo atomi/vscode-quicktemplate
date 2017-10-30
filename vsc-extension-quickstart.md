@@ -29,3 +29,11 @@ https://code.visualstudio.com/docs
 ### Account location
 
 https://vsatomi.visualstudio.com
+
+### Commit to VisualStudio Git Repository
+
+    ssh://vsatomi@vs-ssh.visualstudio.com:22/_ssh/vscode-quicktemplate
+
+### URL for Publishing Instructions using vsce
+
+https://code.visualstudio.com/docs/extensions/publish-extension
