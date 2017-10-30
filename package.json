@@ -1,39 +1,26 @@
 {
-    "name": "quicktemplate",
-    "displayName": "Quicktemplate Language",
-    "version": "0.1.0",
+    "name": "vscode-quicktemplate",
+    "displayName": "vscode-quicktemplate",
+    "description": "Quickemplate (qtpl) Language files for VS Code",
+    "version": "0.0.1",
     "publisher": "atomi",
-    "description": "Borrowed tmLanguage for quicktemplate",
-    "author": {
-        "name": "atomi"
+    "engines": {
+        "vscode": "^1.17.0"
     },
     "categories": [
         "Languages"
     ],
-    "icon": "images/icon.png",
-    "galleryBanner": {
-        "color": "#C80000",
-        "theme": "dark"
-    },
-
-    "devDependencies": {
-        "vscode": "0.10.x"
-    },
-    "license": "Open Source MIT License",
     "contributes": {
-        "languages": [
-            {
-                "id": "qtpl",
-            }
-        ],
-        "grammars": [
-            {
-                "language": "quicktemplate",
-                "scopeName": "text.html.quicktemplate",
-                "path": "./syntaxes/quicktemplate.tmLanguage"
-            }
-        ]
+        "languages": [{
+            "id": "quicktemplate",
+            "aliases": ["Quicktemplate", "quicktemplate"],
+            "extensions": ["qtpl"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "quicktemplate",
+            "scopeName": "source.qtpl",
+            "path": "./syntaxes/quicktemplate.tmLanguage.json"
+        }]
     }
 }
-
-
