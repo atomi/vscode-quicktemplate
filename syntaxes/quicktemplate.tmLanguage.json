@@ -3,27 +3,24 @@
 	"name": "Quicktemplate",
 	"patterns": [
 		{
-			"include": "#keywords"
+			"include": "#html"
 		},
 		{
-			"include": "#strings"
+			"include": "#go"
 		}
 	],
 	"repository": {
-		"keywords": {
+		"html": {
 			"patterns": [{
-				"name": "keyword.control.quicktemplate",
-				"match": "\\b(if|while|for|return)\\b"
+				"include": "text.html.basic"
 			}]
 		},
-		"strings": {
-			"name": "string.quoted.double.quicktemplate",
-			"begin": "\"",
-			"end": "\"",
+		"go": {
+			"begin": "{%",
+			"end": "%}",
 			"patterns": [
 				{
-					"name": "constant.character.escape.quicktemplate",
-					"match": "\\\\."
+					"include": "source.go"
 				}
 			]
 		}
