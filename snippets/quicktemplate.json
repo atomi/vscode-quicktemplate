@@ -1,0 +1,275 @@
+{
+    ".source.qtpl": {
+        // Core Go behavior
+        "Import statement": {
+            "prefix": "{% import",
+            "body": "{% import \"${importPath}\" %}",
+            "description": "Import statement"
+        },
+        "Code statement": {
+            "prefix": "{% code",
+            "body": [
+                "{% code",
+                "${code}",
+                "%}"
+            ],
+            "description": "Import statement"
+        },
+        "Interface statement": {
+            "prefix": "{% interface",
+            "body": [
+                "{%",
+                "interface ${name} {",
+                "\t${fields}",
+                "}",
+                "%}"
+            ],
+            "description": "Import statement"
+        },
+        "If statment": {
+            "prefix": "{% if",
+            "body": "{% if ${conditions} %}${result}{% endif %}",
+            "description": "If statment"
+        },
+        "If/else statement": {
+            "prefix": "{% ife",
+            "body": "{% if ${conditions} %}${result1}{% else %}${result1}{% endif %}",
+            "description": "If/else statement"
+        },
+        "If/elseif/else statement": {
+            "prefix": "{% ifelif",
+            "body": "{% if ${conditions} %}${result1}{% elseif %}${result2}{% else %}${result3}{% endif %}",
+            "description": "If/elseif/else statement"
+        },
+        "Switch statement": {
+            "prefix": "{% switch",
+            "body": [
+                "{% switch ${conditions} %}",
+                "{% case ${case} %}",
+                "${result}",
+                "{% default %}",
+                "${defaultResult}",
+                "{% endswitch %}"
+            ],
+            "description": "Switch statement"
+        },
+        // TODO :: For-statement
+        "Define function": {
+            "prefix": "{% func",
+            "body": [
+                "{% func ${functionName}(${parameters}) %}",
+                "\t${result}",
+                "{% endfunc %}"
+            ],
+            "description": "Define function"
+        },
+
+        // Template custom functions
+        "Package statement": {
+            "prefix": "{% package",
+            "body": "{% package \"${customPackageName}\" %}",
+            "description": "Override default package name with the custom name."
+        },
+        "Wrap comment": {
+            "prefix": "{% comment",
+            "body": "{% comment %}${comment}{% endcomment %}",
+            "description": "Wrap comment. It won't trap into the output. It may contain {% arbitrary tags %}. They are just ignored."
+        },
+        "Plain text": {
+            "prefix": "{% plain",
+            "body": "{% plain %}${plainText}{% endplain %}",
+            "description": "Plain text. Tags will {% trap into %} the output {% unmodified %}. Plain block may contain invalid and {% incomplete tags."
+        },
+        "Collapse space": {
+            "prefix": "{% collapsespace",
+            "body": "{% collapsespace %}${content}{% endcollapsespace %}",
+            "description": "Collapse spaces and newlines until one space remaings between other characters."
+        },
+        "Strip space": {
+            "prefix": "{% stripspace",
+            "body": "{% stripspace %}${content}{% endstripspace %}",
+            "description": "Strip spaces until all content becomes adjecent, unless {% newline %} or {% space %} is used."
+        },
+        "Newline": {
+            "prefix": "{% newline",
+            "body": "{% newline %}",
+            "description": "Newline."
+        },
+        "Space": {
+            "prefix": "{% space",
+            "body": "{% space %}",
+            "description": "Space."
+        },
+        "Cat": {
+            "prefix": "{% cat",
+            "body": "{% cat \"${pathToFile}\" %}",
+            "description": "Cat emits the given file contents as a plaintext."
+        },
+
+        // Internal function formatters
+        "Function output formatter": {
+            "prefix": "{%=",
+            "body": "{%= ${functionName}(${parameters}) %}",
+            "description": "Function output formatter. Optimized for speed - it avoids memory allocations and copy."
+        },
+        "Function output formatter (HTML-escaped)": {
+            "prefix": "{%=h",
+            "body": "{%=h ${functionName}(${parameters}) %}",
+            "description": "Function output formatter (HTML-escaped)."
+        },
+        "Function output formatter (URL-encoded)": {
+            "prefix": "{%=u",
+            "body": "{%=u ${functionName}(${parameters}) %}",
+            "description": "Function output formatter (URL-encoded)."
+        },
+        "Function output formatter (HTML-safe URL-encoded)": {
+            "prefix": "{%=uh",
+            "body": "{%=uh ${functionName}(${parameters}) %}",
+            "description": "Function output formatter (HTML-safe URL-encoded)."
+        },
+        "Function output formatter (quoted json string)": {
+            "prefix": "{%=q",
+            "body": "{%=q ${functionName}(${parameters}) %}",
+            "description": "Function output formatter (quoted json string)."
+        },
+        "Function output formatter (HTML-safe quoted json string)": {
+            "prefix": "{%=qh",
+            "body": "{%=qh ${functionName}(${parameters}) %}",
+            "description": "Function output formatter (HTML-safe quoted json string)."
+        },
+        "Function output formatter (json string without quotes)": {
+            "prefix": "{%=j",
+            "body": "{%=j ${functionName}(${parameters}) %}",
+            "description": "Function output formatter (json string without quotes)."
+        },
+        "Function output formatter (HTML-safe json string without quotes)": {
+            "prefix": "{%=jh",
+            "body": "{%=jh ${functionName}(${parameters}) %}",
+            "description": "Function output formatter (HTML-safe json string without quotes)."
+        },
+
+        // External function formatters
+        "String external function formatter": {
+            "prefix": "{%s=",
+            "body": "{%s= ${functionName}(${parameters}) %}",
+            "description": "String external function formatter."
+        },
+        "Digit external function formatter": {
+            "prefix": "{%d=",
+            "body": "{%d= ${functionName}(${parameters}) %}",
+            "description": "Digit external function formatter for integers."
+        },
+        "Float external function formatter": {
+            "prefix": "{%f=",
+            "body": "{%f= ${functionName}(${parameters}) %}",
+            "description": "Float external function formatter for float64."
+        },
+        "Float external function formatter with precision": {
+            "prefix": "{%f=.",
+            "body": "{%f=.${precision} ${functionName}(${parameters}) %}",
+            "description": "Float external function formatter for float64."
+        },
+        "Byte slice external function formatter": {
+            "prefix": "{%z=",
+            "body": "{%z= ${functionName}(${parameters}) %}",
+            "description": "Byte slice external function formatter for byte slices."
+        },
+        "JSON external function formatter": {
+            "prefix": "{%q=",
+            "body": "{%q= ${functionName}(${parameters}) %}",
+            "description": "JSON-compatible external function formatter for json-compatible quoted strings"
+        },
+        "JSON external function formatter (bytes)": {
+            "prefix": "{%qz=",
+            "body": "{%qz= ${functionName}(${parameters}) %}",
+            "description": "JSON-compatible external function formatter (bytes) for json-compatible quoted strings"
+        },
+        "JSON-string external function formatter": {
+            "prefix": "{%j=",
+            "body": "{%j= ${functionName}(${parameters}) %}",
+            "description": "JSON-string external function formatter for embedding str into json string. Unlike {%q str %} it doesn't quote the string."
+        },
+        "JSON-string external function formatter (bytes)": {
+            "prefix": "{%jz=",
+            "body": "{%jz= ${functionName}(${parameters}) %}",
+            "description": "JSON-string external function formatter (bytes) for embedding str into json string. Unlike {%q str %} it doesn't quote the string."
+        },
+        "URL-encoded string external function formatter": {
+            "prefix": "{%u=",
+            "body": "{%u= ${functionName}(${parameters}) %}",
+            "description": "URL-encoded string external function formatter."
+        },
+        "URL-encoded string function formatter (bytes)": {
+            "prefix": "{%uz=",
+            "body": "{%uz= ${functionName}(${parameters}) %}",
+            "description": "URL-encoded string external function formatter (bytes)."
+        },
+        "Anything/wildcard external function formatter": {
+            "prefix": "{%v=",
+            "body": "{%v= ${functionName}(${parameters}) %}",
+            "description": "Anything/wildcard external function formatter. Equivalent like in printf-like functions."
+        },
+
+        // External formatters
+        "String external formatter": {
+            "prefix": "{%s",
+            "body": "{%s ${value} %}",
+            "description": "String external formatter."
+        },
+        "Digit external formatter": {
+            "prefix": "{%d",
+            "body": "{%d ${value} %}",
+            "description": "Digit external formatter for integers."
+        },
+        "Float external formatter": {
+            "prefix": "{%f",
+            "body": "{%f ${value} %}",
+            "description": "Float external formatter for float64."
+        },
+        "Float external formatter with precision": {
+            "prefix": "{%f=.",
+            "body": "{%f=.${precision} ${value} %}",
+            "description": "Float external formatter for float64."
+        },
+        "Byte slice external formatter": {
+            "prefix": "{%z",
+            "body": "{%z ${value} %}",
+            "description": "Byte slice external formatter for byte slices."
+        },
+        "JSON external formatter": {
+            "prefix": "{%q",
+            "body": "{%q ${value} %}",
+            "description": "JSON-compatible external formatter for json-compatible quoted strings"
+        },
+        "JSON external formatter (bytes)": {
+            "prefix": "{%qz",
+            "body": "{%qz ${value} %}",
+            "description": "JSON-compatible external formatter (bytes) for json-compatible quoted strings"
+        },
+        "JSON-string external formatter": {
+            "prefix": "{%j",
+            "body": "{%j ${value} %}",
+            "description": "JSON-string external formatter for embedding str into json string. Unlike {%q str %} it doesn't quote the string."
+        },
+        "JSON-string external formatter (bytes)": {
+            "prefix": "{%jz",
+            "body": "{%jz ${value} %}",
+            "description": "JSON-string external formatter (bytes) for embedding str into json string. Unlike {%q str %} it doesn't quote the string."
+        },
+        "URL-encoded string external formatter": {
+            "prefix": "{%u",
+            "body": "{%u ${value} %}",
+            "description": "URL-encoded string external formatter."
+        },
+        "URL-encoded string formatter (bytes)": {
+            "prefix": "{%uz",
+            "body": "{%uz ${value} %}",
+            "description": "URL-encoded string external formatter (bytes)."
+        },
+        "Anything/wildcard external formatter": {
+            "prefix": "{%v",
+            "body": "{%v ${value} %}",
+            "description": "Anything/wildcard external formatter. Equivalent like in printf-like functions."
+        }
+    }
+}
