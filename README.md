@@ -8,7 +8,7 @@ Basic tmLanguage defines source.go and text.html.basic scopes.
 
 ## Known Issues
 
-None.
+- HTML doesn't auto-complete
 
 ## Release Notes
 
