@@ -12,11 +12,4 @@ Basic tmLanguage defines source.go and text.html.basic scopes.
 
 ## Release Notes
 
-
-### 0.0.2
-
-- Basic auto-completion and commenting
-
-### 0.0.1
-
-Initial Release.
+See the [Changelog](https://marketplace.visualstudio.com/items/vsatomi.vscode-quicktemplate/changelog)
