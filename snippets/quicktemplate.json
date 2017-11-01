@@ -53,7 +53,24 @@
             ],
             "description": "Switch statement"
         },
-        // TODO :: For-statement
+        "For statement": {
+            "prefix": "{% for",
+            "body": [
+                "{% for ${key}, ${value} := range ${values} %}",
+                "\t${result}",
+                "{% endfor %}"
+            ],
+            "description": "For statement"
+        },
+        "For counter statement": {
+            "prefix": "{% fori",
+            "body": [
+                "{% for ${var} := 0; ${var} < ${limit}; ${var}++ %}",
+                "\t${result}",
+                "{% endfor %}"
+            ],
+            "description": "For counter statement"
+        },
         "Define function": {
             "prefix": "{% func",
             "body": [
