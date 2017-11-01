@@ -8,9 +8,15 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 Initial Release provides only syntax highlighting.
 
-### [0.0.2]
+## [0.0.2] 2017-11-01
 ### Added
 
 - Basic auto-completion and commenting
+
+## [0.0.3] 2017-11-01
+### Added
+
+- Added changelog
+- Added github repo url to project
 
 ## [Unreleased]

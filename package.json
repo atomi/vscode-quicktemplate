@@ -2,7 +2,7 @@
     "name": "vscode-quicktemplate",
     "displayName": "vscode-quicktemplate",
     "description": "Quickemplate (qtpl) Language files for VS Code",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "publisher": "vsatomi",
     "repository": {
         "url": "https://github.com/atomi/vscode-quicktemplate/"
